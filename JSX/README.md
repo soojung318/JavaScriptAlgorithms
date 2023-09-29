@@ -1,6 +1,7 @@
 # JSX
 JavaScript XML<br>
 React에서 함수형 컴포넌트의 반환값으로 JSX 사용.<br>
+<a href="https://react.dev/learn/writing-markup-with-jsx">Writing Markup with JSX</a>
 
 ## 주의사항 3가지
 1. Component는 꼭 하나의 태그를 반환해야 한다.<br>
