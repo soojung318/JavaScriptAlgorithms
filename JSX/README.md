@@ -39,3 +39,6 @@ function App() {
 export default App;
 
 ```
+
+## 참고사항
+1. 리액트 컴포넌트 파일 확장자는 `AppJSX.jsx`와 같이 `.jsx`를 사용해서 일반 자바스크립트 파일과 구분짓도록 한다.
