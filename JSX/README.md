@@ -1,7 +1,7 @@
 # JSX
 JavaScript XML<br>
 React에서 함수형 컴포넌트의 반환값으로 JSX 사용.<br>
-<a href="https://react.dev/learn/writing-markup-with-jsx">Writing Markup with JSX</a>
+<a href="https://react.dev/learn/writing-markup-with-jsx">Writing Markup with JSX</a><br>
 <a href="https://transform.tools/html-to-jsx">HTML to JSX</a>
 
 ## 주의사항 3가지
