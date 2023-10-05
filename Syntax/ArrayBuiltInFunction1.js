@@ -4,7 +4,7 @@ for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
 }
 
-//1. forEach () : callback함수
+//1. forEach (elm,idx,arr) : callback함수
 // callback함수(a,b,c) : 매개 변수로 함수를 전달한다. 3가지 매개변수 전달 가능
 // (a) current value(처리할 현재 요소)를 매개변수로 가진다.
 arr.forEach((elm) => { //elm : current value
@@ -48,8 +48,8 @@ console.log(colors.at(1));//blue
 console.log(colors.at(-1));//purple, at(-n) : 항상 배열의 마지막 요소의 값을 반환.
 
 
-//4.includes()
-//a. 매개변수로 받은 요소를 배열이 포함하고 있는지 판별하여 분리한 값으로 반환.
+//4.includes(elm,idx)
+//a. 매개변수로 받은 요소를 배열이 포함하고 있는지 판별하여 boolean 값으로 반환.
 let colors = ["green", "blue", "purple"];
 console.log(colors.includes("blue")); //true
 console.log(colors.includes("yellow")); //false
@@ -61,7 +61,7 @@ console.log(colors.includes("blue", 1)); //true : 배열의 인덱스 1번부터
 
 
 //5. indexof : 특정 값이 배열 요소에 있는 지를 검사하는 것이 아니라,
-//             특정 값을 지닌 요소가 몇 번쨰에 위치하는 요소인지를 찿아주는 함수.
+//             특정 값을 지닌 요소가 몇 번째에 위치하는 요소인지를 찿아주는 함수.
 let colors = ["green", "blue", "purple"];
 console.log(colors.indexOf("purple")); //2
 // 만약, colors 배열에 존재하지 않는 값을 indexOf() 통해 찾으려면?
@@ -77,7 +77,7 @@ let colors = [
 let idx = colors.findIndex((elm) => elm.colors === "purple")
 console.log(idx); //2 : id가 출력되는 것이 아닌, index가 출력된다.
 let idx = colors.findIndex((elm, idx, array) =>
-    console.log(`${idx}번쨰 값은 id: ${elm.id}, color: ${elm.color}`)
+    console.log(`${idx}번째 값은 id: ${elm.id}, color: ${elm.color}`)
 );
 colors.findIndex((elm, idx, array) => console.log(array));
 /*
@@ -87,7 +87,7 @@ colors.findIndex((elm, idx, array) => console.log(array));
 */
 
 
-//6.find() : 찾아낸 값의 인덱스를 반환하는 것이 아니라 찾아낸 값 그 자체를 반환.
+//6. find() : 찾아낸 값의 인덱스를 반환하는 것이 아니라 찾아낸 값 그 자체를 반환.
 let idx = colors.find((elm) => elm.color === "purple");
 console.log(idx);  //{id: 3, color: "purple"}
 
@@ -123,7 +123,7 @@ console.log(filterArray);
 */
 
 
-// 8. slice() : 배열에서 특정값들만 따로 추출해서 새로운 배열을 생성하는 내장함수.
+// 8. slice(begin,end) : 배열에서 특정값들만 따로 추출해서 새로운 배열을 생성하는 내장함수. begin ~ (end-1) 까지.
 // 특정 배열을 원하는 부분만 잘라서 가져올 수 있다.
 // 2개의 매개변수 : (begin,end)
 let colors = [
