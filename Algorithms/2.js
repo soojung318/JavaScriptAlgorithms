@@ -1,3 +1,4 @@
+// 삼각형 판별하기
 function solution(a,b,c){
     let maxNum,num, answer;
     if(a>b) {
