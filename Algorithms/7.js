@@ -1,7 +1,7 @@
-function solution(date, arr){
+function solution(day, arr){
     let answer=0;
     for (let i of arr){
-        if (i%10 === date) answer++;
+        if (i%10 === day) answer++;
     }
     return answer;
 }
