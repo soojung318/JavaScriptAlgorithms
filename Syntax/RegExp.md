@@ -4,6 +4,7 @@ Regular Expression의 약자고 한국어론 "정규형"이라고 한다.<br>
 문자열 표기법과 생성자를 사용하는 방법이다.
 
 ## 1. Literal notation, 문자열 표기법
+
 ```
 const re = /ab+c/i; 
 ```
