@@ -31,4 +31,3 @@ RegExp(pattern, flags?)
 4) s: 문자열 에서 `.` 에서 개행문자를 허용한다.
 5) y: lastIndex 부터 일치하는 문자열을 반환한다.
 6) u: Unicode 코드 포인트의 시퀀스로 처리한다.
-   
