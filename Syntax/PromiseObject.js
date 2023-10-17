@@ -117,14 +117,88 @@ const executor = (resolve, reject) => {
 };
 const promise = new Promise(executor);
 
-// resolve, reject 사용법 예제
+
+
+// 비동기 처리가 성공 및 실패 했을 때의 예제 2가지
+// 1. resolve 사용법 예제
 const executor = (resolve, reject) => {
     setTimeout(() => {
         resolve("성공"); // 1. 이 resolve 콜백함수에 전달된 값은
     }, 5000);
 };
+
 const promise = new Promise(executor);
 promise.then((res) =>{ //2. promise 객체의 then 메서드를 이용해 사용할 수 있고, 이 then 메서드는 executor 함수에서 전달한 값이 매개변수로 전달된다.
     console.log(res);  //3. 이 executor에서 전달한 성공이라는 값을 콜백함수의 매개변수로 전달받을 수 있다.
 }); //3초후 "성공" 출력.
 
+
+
+
+// 2. reject 사용법 예제
+const executor = (resolve, reject) => {
+    setTimeout(()=> {
+        reject("실패");
+    },3000);
+};
+
+const promise = new Promise(executor);
+promise
+    .then((res)=>{
+        console.log(res); //then 메소드는 성공시에만 출력되므로 여기선 출력 안됨.
+    })
+    .catch((err)=>{
+        console.log(err); // "실패" 출력됨
+    });
+
+
+//[예제] 콜백지옥 코드에 프로미스 객체 적용하기
+const workA=()=>{
+    const promise = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(value+5);
+        },5000)
+    });
+    return promise;
+}
+const workB=()=>{
+    const promise = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(value-3);
+        },3000)
+    });
+    return promise;
+}
+const workC=()=>{
+    const promise = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(value+10);
+        },10000)
+    });
+    return promise;
+}
+// 콜백지옥
+// workA(10).then((resA)=>{
+//     console.log(`1. ${resA}`); //1. 15
+//     workB(resA).then((resB) => {
+//         console.log(`2. ${resB}`);  //2. 12
+//         workC(resB).then((resC)=>{
+//             console.log(`3. ${resC}`);  //3. 22
+//         });
+//     });
+// });
+
+//위의 소스코드를 프로미스 객체를 사용함
+//프로미스 체이닝 : 계속해서 프로미스 객체를 반환하며 then 메소드를 연속으로 사용함
+workA(10)
+    .then((resA)=>{
+        console.log(`1. ${resA}`);  //1. 15
+        return workB(resA);
+    })
+    .then((resB)=>{
+        console.log(`2. ${resB}`);  //2. 12
+        return workC(resB);
+    })
+    .then((resC)=>{
+        console.log(`3. ${resC}`);  //3. 22
+    });
