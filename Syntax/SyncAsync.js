@@ -23,7 +23,7 @@
 
 */
 // 비동기 내장함수(setTimeout)를 사용한 예제, 비동기에 대한 감 잡기.
-setTimeout(()=>{
+setTimeout(() => {
     console.log("3초만 기다리세요");
 }, 3000);
 
@@ -38,28 +38,28 @@ console.log("종료");
 
 
 // 비동기, 동기 방식 이해하기 - A~C:비동기함수, D:동기함수
-const workA = ()=>{
-    setTimeout(()=>{
+const workA = () => {
+    setTimeout(() => {
         console.log("workA");
         callback();
     }, 5000);
 };
 
-const workB = ()=>{
-    setTimeout(()=>{
+const workB = () => {
+    setTimeout(() => {
         console.log("workB");
         callback();
     }, 3000);
 };
 
-const workC = ()=>{
-    setTimeout(()=>{
+const workC = () => {
+    setTimeout(() => {
         console.log("workC");
         callback();
     }, 10000);
 };
 
-const workD = ()=>{
+const workD = () => {
     console.log("workD");
 };
 
