@@ -19,7 +19,6 @@ const start = () => {
 start();
 
 
-
 //위 코드를 async로 구현
 const delay = (ms) => {
     return new Promise((resolve) => {
@@ -79,11 +78,10 @@ const delay = (ms) => {
 };
 
 const start = async () => {
-    try{
+    try {
         await delay(2000);
         console.log("대기");
-    }
-    catch(error){ //try문 안에서 error가 발생하면 실행함. error가 발생하면 이 에러객체를 사용하여 어떤 에러가 발생했는지 출력할 수 있다.
+    } catch (error) { //try문 안에서 error가 발생하면 실행함. error가 발생하면 이 에러객체를 사용하여 어떤 에러가 발생했는지 출력할 수 있다.
         console.log(error);
     }
 };
