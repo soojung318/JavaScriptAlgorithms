@@ -47,3 +47,43 @@ console.log(document.getElementById("date")); //출력값: <div class="date" id=
 console.log(document.querySelector("div.date")); //출력값: <div class="date" id="date">10.25.수요일</div>
 
 // 여러개의 요소를 반환하는 API
+console.log(document.getElementsByTagName("div")); //출력값: HTMLCollection {0: HTMLDivElement, 1: HTMLDivElement, 2: HTMLDivElement, length: 3, item: ƒ item()…}
+
+//클래스명 date 출력
+console.log(document.getElementById("date").className); //date
+
+//클래스명 바꾸는 예제
+const dateElement = document.getElementById("date");
+dateElement.className = "change";
+
+console.log(dateElement);
+
+//id 값 출력
+console.log(document.querySelector("div.date").id); //date로 변경됨.
+
+//id값 변경 후 출력
+const dateElement = document.querySelector("div.date");
+dateElement.id = "change";
+
+console.log(dateElement); //change로 변경됨
+
+//classList 사용하여 클래스에 접근하기 :클래스 네임처럼 특정 요소의 클래스 속성에 접근하지만 클래스와는 다르게 여러가지 메서드를 사용할 수 있다.
+//add, remove, item, toggle, contains, replace 메서드를 제공함.
+console.log(document.getElementById("date").classList); //DOMTokenList {0: "date", length: 1, value: "date", item: ƒ item(), contains: ƒ contains()…}
+
+// 1. add 메서드를 사용해 클래스 네임 추가 : className은 요소에 무언가를 대입하면 이름 전체가 변경되지만
+// classList는 기존의 값에 특정 값을 추가하거나 제거하고 변경이 가능한 속성이다.
+// 2. remove를 사용해 클래스명 제거하기
+const dateElement = document.getElementById("date");
+dateElement.classList.add("change"); //1
+dateElement.classList.remove("date"); //2
+
+console.log(dateElement);
+
+//textContent : 요소에 새로운 text를 할당할 수 있다.
+const clockElement = document.getElementById("clock");
+clockElement.textContent = "12:00"; //Browser에서 21:56 -> 12:00으로 변경됨.
+
+const clockElement = document.querySelector("div.date");
+clockElement.textContent = "10.26.목요일"; // 브라우저에서 10.25.수요일 -> 10.26.목요일 로 변경됨.
+
