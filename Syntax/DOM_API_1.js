@@ -72,7 +72,7 @@ console.log(dateElement); //change로 변경됨
 console.log(document.getElementById("date").classList); //DOMTokenList {0: "date", length: 1, value: "date", item: ƒ item(), contains: ƒ contains()…}
 
 // 1. add 메서드를 사용해 클래스 네임 추가 : className은 요소에 무언가를 대입하면 이름 전체가 변경되지만
-// classList는 기존의 값에 특정 값을 추가하거나 제거하고 변경이 가능한 속성이다.
+//    classList는 기존의 값에 특정 값을 추가하거나 제거하고 변경이 가능한 속성이다.
 // 2. remove를 사용해 클래스명 제거하기
 const dateElement = document.getElementById("date");
 dateElement.classList.add("change"); //1
