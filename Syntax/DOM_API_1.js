@@ -39,7 +39,7 @@
 
 // 하나의 요소만 반환하는 API
 // 1. getElementId API : 특정 요소의 id 값을 가져와서 그 특정 요소 객체를 반환하는 API
-//                  : 동일한 id값을 가진 객체가 여러개 있을 경우, 가장 위에 있는 첫 번째 요소만 반환함.
+//                     : 동일한 id값을 가진 객체가 여러개 있을 경우, 가장 위에 있는 첫 번째 요소만 반환함.
 
 console.log(document.getElementById("date")); //출력값: <div class="date" id="date">10.25.수요일</div>
 
