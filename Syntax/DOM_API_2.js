@@ -27,36 +27,21 @@ seasonElment.appendChild(seasonText);
 
 console.log(document.getElementsByTagName("div"));
 
-//DOM API를 사용하여 버튼 만들기
+//새로운 버튼 element node 추가하기
 const buttonElement = document.createElement("div");
 buttonElement.classList.add("button");
 buttonElement.textContent = "버튼";
 
+buttonElement.style.backgroundColor = "skyblue";
+buttonElement.style.width = "50px";
+buttonElement.style.textAlign = "center";
+buttonElement.style.cursor = "pointer";
+
 const todayInfoElement = document.querySelector("div.today-info");
 todayInfoElement.appendChild(buttonElement);
 
-console.log(document.getElementsByTagName("div"));
-/* 출력결과
-0:
-<div class="today-info">
-<div class="date" id="date">
-        10.25.수요일
-      </div>
-<div class="colck" id="clock">
-        21:56
-      </div>
-<div class="button">버튼</div>
-</div>
-1:
-<div class="date" id="date">
-        10.25.수요일
-      </div>
-2:
-<div class="colck" id="clock">
-        21:56
-      </div>
-3:
-<div class="button">버튼</div>
-*/
+buttonElement.addEventListener("click", () => {
+    window.alert("클릭!");
+});
 
-//DOM API를 사용하여 웹요소 조작하기
+console.log(document.getElementsByTagName("div"));
