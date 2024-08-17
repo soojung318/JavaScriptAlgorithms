@@ -6,13 +6,11 @@ console.log(array1.concat(array2)); //["green", "blue", "purple", "yellow"]
 
 
 
-
 // 10. join() : 하나의 배열에서 배열 요소들의 값들을 "문자열"로 이어주는 메서드.(concat 메서드와 비슷하지만 다르다)
 let array1 = ["green", "blue", "purple", "yellow"];
 
 console.log(array1.join());  //green,blue,purple,yellow : 기본 구분자는 쉽표(,)
 console.log(array1.join(" "));  //green blue purple yellow : 구분자를 넣어주면 원하는 구분자가 출력됨.
-
 
 
 
